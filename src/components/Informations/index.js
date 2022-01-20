@@ -18,12 +18,35 @@ const Informations = () => {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac',
   });
 
+  const [practicalExperiences, setPracticalExperiences] = useState({
+    position: '',
+    company: '',
+    city: '',
+    from: '',
+    to: '',
+  });
+
+  const [educationalExperiences, setEducationalExperiences] = useState({
+    universityName: '',
+    city: '',
+    degree: '',
+    subject: '',
+    from: '',
+    to: '',
+  });
+
   // POUR CHARGER UN EXEMPLE UTILISER UN BOOLEAN DANS UN STATE EXEMPLE ET REMPLIR CHAQUE STATE AVEC DES FAUSSES INFO
 
   const handleChangeGeneralInformations = (data) => {
-    console.log('from informations components');
-    console.log(data);
     setGeneralInformations(data);
+  };
+
+  const handleChangePracticalExperiences = (data) => {
+    setPracticalExperiences(data);
+  };
+
+  const handleChangeEducationalExperiences = (data) => {
+    setEducationalExperiences(data);
   };
 
   return (
@@ -33,10 +56,20 @@ const Informations = () => {
           <GeneralInformations
             handleChangeGeneralInformations={handleChangeGeneralInformations}
           />
-          <EducationalExperiences />
-          <PracticalExperiences />
+          <PracticalExperiences
+            handleChangePracticalExperiences={handleChangePracticalExperiences}
+          />
+          <EducationalExperiences
+            handleChangeEducationalExperiences={
+              handleChangeEducationalExperiences
+            }
+          />
         </EditCvInfo>
-        <Preview generalInformations={generalInformations} />
+        <Preview
+          generalInformations={generalInformations}
+          practicalExperiences={practicalExperiences}
+          educationalExperiences={educationalExperiences}
+        />
       </Content>
     </Wrapper>
   );

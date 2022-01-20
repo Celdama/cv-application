@@ -26,6 +26,17 @@ const GeneralInformations = ({ handleChangeGeneralInformations }) => {
     });
   };
 
+  const {
+    firstName,
+    lastName,
+    title,
+    photo,
+    adress,
+    phoneNumber,
+    email,
+    description,
+  } = formData;
+
   return (
     <div>
       <h3>Personal Information</h3>
@@ -33,55 +44,55 @@ const GeneralInformations = ({ handleChangeGeneralInformations }) => {
         <input
           type='text'
           name='firstName'
-          id=''
+          value={firstName}
           placeholder='first name'
           onChange={handleChange}
         />
         <input
           type='text'
           name='lastName'
-          id=''
+          value={lastName}
           placeholder='last name'
           onChange={handleChange}
         />
         <input
           type='text'
           name='title'
-          id=''
+          value={title}
           placeholder='title'
           onChange={handleChange}
         />
         <input
           type='text'
           name='photo'
-          id=''
+          value={photo}
           placeholder='photo'
           onChange={handleChange}
         />
         <input
           type='text'
           name='adress'
-          id=''
+          value={adress}
           placeholder='adress'
           onChange={handleChange}
         />
         <input
           type='number'
           name='phoneNumber'
-          id=''
+          value={phoneNumber}
           placeholder='phone number'
           onChange={handleChange}
         />
         <input
           type='email'
           name='email'
-          id=''
+          value={email}
           placeholder='email'
           onChange={handleChange}
         />
         <textarea
           name='description'
-          id=''
+          value={description}
           placeholder='description'
           onChange={handleChange}
         />
