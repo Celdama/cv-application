@@ -1,9 +1,10 @@
 import { GlobalStyle } from './GlobalStyle';
+import Informations from './components/Informations';
 
 function App() {
   return (
     <div className='App'>
-      <h1>Cv</h1>
+      <Informations />
       <GlobalStyle />
     </div>
   );

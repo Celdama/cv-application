@@ -12,4 +12,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
   }
+
+  .App {
+    outline: 1px solid red;
+  }
 `;
