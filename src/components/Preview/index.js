@@ -4,7 +4,34 @@ const Preview = ({
   generalInformations,
   practicalExperiences,
   educationalExperiences,
+  educationalExperiencesList,
 }) => {
+  const educationalExpElements = educationalExperiencesList.map((element) => {
+    return (
+      <div>
+        <div>
+          <p>
+            University : <span>{element.universityName}</span>
+          </p>
+          <p>
+            City: <span>{element.city}</span>
+          </p>
+          <p>
+            Degree: <span>{element.degree}</span>
+          </p>
+          <p>
+            Subject: <span>{element.subject}</span>
+          </p>
+          <p>
+            From: <span>{element.from}</span>
+          </p>
+          <p>
+            To: <span>{element.to}</span>
+          </p>
+        </div>
+      </div>
+    );
+  });
   return (
     <div>
       <div>
@@ -27,6 +54,8 @@ const Preview = ({
       </div>
       <div>
         <h3>Educational</h3>
+        {educationalExperiencesList.length > 0 && educationalExpElements}
+
         <p>{educationalExperiences.universityName}</p>
         <p>{educationalExperiences.city}</p>
         <p>{educationalExperiences.degree}</p>

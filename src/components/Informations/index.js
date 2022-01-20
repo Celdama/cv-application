@@ -35,6 +35,10 @@ const Informations = () => {
     to: '',
   });
 
+  const [educationalExperiencesList, setEducationalExperiencesList] = useState(
+    []
+  );
+
   // POUR CHARGER UN EXEMPLE UTILISER UN BOOLEAN DANS UN STATE EXEMPLE ET REMPLIR CHAQUE STATE AVEC DES FAUSSES INFO
 
   const handleChangeGeneralInformations = (data) => {
@@ -47,6 +51,13 @@ const Informations = () => {
 
   const handleChangeEducationalExperiences = (data) => {
     setEducationalExperiences(data);
+  };
+
+  const handleAddEducationalExperience = () => {
+    // setEducationalExperiences({});
+    setEducationalExperiencesList((prevEducationalExperiencesList) => {
+      return [...prevEducationalExperiencesList, educationalExperiences];
+    });
   };
 
   return (
@@ -63,12 +74,14 @@ const Informations = () => {
             handleChangeEducationalExperiences={
               handleChangeEducationalExperiences
             }
+            handleAddEducationalExperience={handleAddEducationalExperience}
           />
         </EditCvInfo>
         <Preview
           generalInformations={generalInformations}
           practicalExperiences={practicalExperiences}
           educationalExperiences={educationalExperiences}
+          educationalExperiencesList={educationalExperiencesList}
         />
       </Content>
     </Wrapper>
