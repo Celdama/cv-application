@@ -24,6 +24,18 @@ export const MainContent = styled.div`
   padding: 20px;
   width: 77%;
 
+  .practical-date,
+  .educational-date {
+    width: 17%;
+    padding: 6px;
+  }
+
+  .practical-details,
+  .educational-details {
+    width: 83%;
+    padding: 6px;
+  }
+
   .practical-container,
   .educational-container {
     .practical,

@@ -4,6 +4,8 @@ import { fakeEducationalExp } from '../../fakeData';
 const EducationalExperiences = ({
   handleChangeEducationalExperience,
   handleAddEducationalExperience,
+  handleDeleteEducationalExperience,
+  educationalExperiencesList,
   editMode,
 }) => {
   const [formData, setFormData] = useState({
@@ -41,6 +43,19 @@ const EducationalExperiences = ({
     });
     handleAddEducationalExperience();
   };
+
+  const educationalExpElements = educationalExperiencesList.map(
+    ({ id, universityName }) => {
+      return (
+        <div key={id}>
+          <div>{universityName}</div>
+          <button onClick={() => handleDeleteEducationalExperience(id)}>
+            delete
+          </button>
+        </div>
+      );
+    }
+  );
 
   const { universityName, city, degree, subject, from, to } = formData;
 
@@ -92,6 +107,7 @@ const EducationalExperiences = ({
         />
         {editMode && <button>add</button>}
       </form>
+      {educationalExperiencesList.length > 0 && educationalExpElements}
     </div>
   );
 };

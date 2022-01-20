@@ -104,13 +104,19 @@ const Informations = () => {
             editMode={editMode}
             handleChangePracticalExperience={handleChangePracticalExperience}
             handleAddPracticalExperience={handleAddPracticalExperience}
+            practicalExperiencesList={practicalExperiencesList}
+            handleDeletePracticalExperience={handleDeletePracticalExperience}
           />
           <EducationalExperiences
             editMode={editMode}
             handleChangeEducationalExperience={
               handleChangeEducationalExperience
             }
+            educationalExperiencesList={educationalExperiencesList}
             handleAddEducationalExperience={handleAddEducationalExperience}
+            handleDeleteEducationalExperience={
+              handleDeleteEducationalExperience
+            }
           />
           <button onClick={handleFakeInformations}>
             {!editMode ? 'back edit mode' : 'load example'}
@@ -125,14 +131,10 @@ const Informations = () => {
               !editMode ? fakePracticalExp : practicalExperience
             }
             practicalExperiencesList={practicalExperiencesList}
-            handleDeletePracticalExperience={handleDeletePracticalExperience}
             educationalExperience={
               !editMode ? fakeEducationalExp : educationalExperience
             }
             educationalExperiencesList={educationalExperiencesList}
-            handleDeleteEducationalExperience={
-              handleDeleteEducationalExperience
-            }
           />
         </PreviewCvInfo>
       </Content>

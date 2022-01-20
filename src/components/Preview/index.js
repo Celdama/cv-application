@@ -14,35 +14,24 @@ const Preview = ({
   generalInformations,
   practicalExperience,
   practicalExperiencesList,
-  handleDeletePracticalExperience,
   educationalExperience,
   educationalExperiencesList,
-  handleDeleteEducationalExperience,
 }) => {
   const practicalExpElements = practicalExperiencesList.map(
     ({ id, position, company, city, from, to }) => {
       return (
-        <div key={id}>
-          <div>
+        <div key={id} className='practical'>
+          <div className='practical-date'>
+            <span>
+              {from} - {to}
+            </span>
+          </div>
+          <div className='practical-details'>
+            <p>{position}</p>
             <p>
-              Position : <span>{position}</span>
-            </p>
-            <p>
-              Company : <span>{company}</span>
-            </p>
-            <p>
-              City : <span>{city}</span>
-            </p>
-            <p>
-              From : <span>{from}</span>
-            </p>
-            <p>
-              To : <span>{to}</span>
+              {company}, {city}
             </p>
           </div>
-          <button onClick={() => handleDeletePracticalExperience(id)}>
-            delete
-          </button>
         </div>
       );
     }
@@ -51,31 +40,19 @@ const Preview = ({
   const educationalExpElements = educationalExperiencesList.map(
     ({ id, universityName, city, degree, subject, from, to }) => {
       return (
-        <div key={id}>
-          <div>
-            <p>
-              University : <span>{universityName}</span>
-            </p>
-            <p>
-              City: <span>{city}</span>
-            </p>
-            <p>
-              Degree: <span>{degree}</span>
-            </p>
-            <p>
-              Subject: <span>{subject}</span>
-            </p>
-            <p>
-              From: <span>{from}</span>
-            </p>
-            <p>
-              To: <span>{to}</span>
-            </p>
+        <div key={id} className='educational'>
+          <div className='educational-date'>
+            <span>
+              {from} - {to}
+            </span>
           </div>
-
-          <button onClick={() => handleDeleteEducationalExperience(id)}>
-            delete
-          </button>
+          <div className='educational-details'>
+            <p>
+              {universityName}, {city}
+            </p>
+            <p>Degree: {degree}</p>
+            <p>Subject: {subject}</p>
+          </div>
         </div>
       );
     }
@@ -95,38 +72,33 @@ const Preview = ({
             <h4>Description</h4>
             <p>{generalInformations.description}</p>
           </div>
-          {/* <div>
-          <h3>General</h3>
-          <PreviewGenInformations generalInformations={generalInformations} />
-        </div> */}
           <div className='practical-container'>
             <h4>Experiences</h4>
-            {/* {practicalExperiencesList.length > 0 && practicalExpElements} */}
+            {practicalExperiencesList.length > 0 && practicalExpElements}
             <div className='practical'>
-              <div>
+              <div className='practical-date'>
                 <span>
                   {practicalExperience.from} - {practicalExperience.to}
                 </span>
               </div>
-              <div>
+              <div className='practical-details'>
                 <p>{practicalExperience.position}</p>
                 <p>
                   {practicalExperience.company}, {practicalExperience.city}
                 </p>
               </div>
             </div>
-            {/* <PreviewPracticalExp practicalExperience={practicalExperience} /> */}
           </div>
           <div className='educational-container'>
             <h4>Educational</h4>
             {educationalExperiencesList.length > 0 && educationalExpElements}
             <div className='educational'>
-              <div>
+              <div className='educational-date'>
                 <span>
                   {educationalExperience.from} - {educationalExperience.to}
                 </span>
               </div>
-              <div>
+              <div className='educational-details'>
                 <p>
                   {educationalExperience.universityName},{' '}
                   {educationalExperience.city}
@@ -135,9 +107,6 @@ const Preview = ({
                 <p>Subject: {educationalExperience.subject}</p>
               </div>
             </div>
-            {/* <PreviewEducationalExp
-              educationalExperience={educationalExperience}
-            /> */}
           </div>
         </MainContent>
         <SideContent>

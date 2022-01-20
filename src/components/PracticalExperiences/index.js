@@ -4,6 +4,8 @@ import { fakePracticalExp } from '../../fakeData';
 const PracticalExperiences = ({
   handleChangePracticalExperience,
   handleAddPracticalExperience,
+  practicalExperiencesList,
+  handleDeletePracticalExperience,
   editMode,
 }) => {
   const [formData, setFormData] = useState({
@@ -40,6 +42,19 @@ const PracticalExperiences = ({
 
     handleAddPracticalExperience();
   };
+
+  const practicalExpElements = practicalExperiencesList.map(
+    ({ id, position, company, city, from, to }) => {
+      return (
+        <div key={id}>
+          <div>{position}</div>
+          <button onClick={() => handleDeletePracticalExperience(id)}>
+            delete
+          </button>
+        </div>
+      );
+    }
+  );
 
   const { position, company, city, from, to } = formData;
 
@@ -84,6 +99,8 @@ const PracticalExperiences = ({
         />
         {editMode && <button>add</button>}
       </form>
+
+      {practicalExperiencesList.length > 0 && practicalExpElements}
     </div>
   );
 };
