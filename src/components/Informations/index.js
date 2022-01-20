@@ -68,6 +68,17 @@ const Informations = () => {
     });
   };
 
+  const handleDeleteEducationalExperience = (id) => {
+    setEducationalExperiencesList((prevState) =>
+      prevState.filter((experience) => experience.id !== id)
+    );
+  };
+
+  const handleDeletePracticalExperience = (id) => {
+    setPracticalExperiencesList((prevState) =>
+      prevState.filter((experience) => experience.id !== id)
+    );
+  };
   return (
     <Wrapper>
       <Content>
@@ -90,8 +101,10 @@ const Informations = () => {
           generalInformations={generalInformations}
           practicalExperience={practicalExperience}
           practicalExperiencesList={practicalExperiencesList}
+          handleDeletePracticalExperience={handleDeletePracticalExperience}
           educationalExperience={educationalExperience}
           educationalExperiencesList={educationalExperiencesList}
+          handleDeleteEducationalExperience={handleDeleteEducationalExperience}
         />
       </Content>
     </Wrapper>

@@ -7,8 +7,10 @@ const Preview = ({
   generalInformations,
   practicalExperience,
   practicalExperiencesList,
+  handleDeletePracticalExperience,
   educationalExperience,
   educationalExperiencesList,
+  handleDeleteEducationalExperience,
 }) => {
   const practicalExpElements = practicalExperiencesList.map(
     ({ id, position, company, city, from, to }) => {
@@ -31,6 +33,9 @@ const Preview = ({
               To : <span>{to}</span>
             </p>
           </div>
+          <button onClick={() => handleDeletePracticalExperience(id)}>
+            delete
+          </button>
         </div>
       );
     }
@@ -60,6 +65,10 @@ const Preview = ({
               To: <span>{to}</span>
             </p>
           </div>
+
+          <button onClick={() => handleDeleteEducationalExperience(id)}>
+            delete
+          </button>
         </div>
       );
     }
