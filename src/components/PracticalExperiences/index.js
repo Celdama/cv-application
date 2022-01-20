@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const PracticalExperiences = ({
-  handleChangePracticalExperiences,
+  handleChangePracticalExperience,
   handleAddPracticalExperience,
 }) => {
   const [formData, setFormData] = useState({
@@ -13,8 +13,8 @@ const PracticalExperiences = ({
   });
 
   useEffect(() => {
-    handleChangePracticalExperiences(formData);
-  }, [handleChangePracticalExperiences, formData]);
+    handleChangePracticalExperience(formData);
+  }, [handleChangePracticalExperience, formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -44,7 +44,7 @@ const PracticalExperiences = ({
   return (
     <div>
       <h3>Experience</h3>
-      <form action='#'>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           name='position'
@@ -80,7 +80,7 @@ const PracticalExperiences = ({
           placeholder='to'
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>add</button>
+        <button>add</button>
       </form>
     </div>
   );

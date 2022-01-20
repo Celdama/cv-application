@@ -19,7 +19,7 @@ const Informations = () => {
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac',
   });
 
-  const [practicalExperiences, setPracticalExperiences] = useState({
+  const [practicalExperience, setPracticalExperience] = useState({
     position: '',
     company: '',
     city: '',
@@ -27,7 +27,7 @@ const Informations = () => {
     to: '',
   });
 
-  const [educationalExperiences, setEducationalExperiences] = useState({
+  const [educationalExperience, setEducationalExperience] = useState({
     universityName: '',
     city: '',
     degree: '',
@@ -36,11 +36,11 @@ const Informations = () => {
     to: '',
   });
 
+  const [practicalExperiencesList, setPracticalExperiencesList] = useState([]);
+
   const [educationalExperiencesList, setEducationalExperiencesList] = useState(
     []
   );
-
-  const [practicalExperiencesList, setPracticalExperiencesList] = useState([]);
 
   // POUR CHARGER UN EXEMPLE UTILISER UN BOOLEAN DANS UN STATE EXEMPLE ET REMPLIR CHAQUE STATE AVEC DES FAUSSES INFO
 
@@ -48,23 +48,23 @@ const Informations = () => {
     setGeneralInformations(data);
   };
 
-  const handleChangePracticalExperiences = (data) => {
-    setPracticalExperiences(data);
+  const handleChangePracticalExperience = (data) => {
+    setPracticalExperience(data);
   };
 
-  const handleChangeEducationalExperiences = (data) => {
-    setEducationalExperiences(data);
-  };
-
-  const handleAddEducationalExperience = () => {
-    setEducationalExperiencesList((prevState) => {
-      return [...prevState, { id: nanoid(), ...educationalExperiences }];
-    });
+  const handleChangeEducationalExperience = (data) => {
+    setEducationalExperience(data);
   };
 
   const handleAddPracticalExperience = () => {
     setPracticalExperiencesList((prevState) => {
-      return [...prevState, { id: nanoid(), ...practicalExperiences }];
+      return [...prevState, { id: nanoid(), ...practicalExperience }];
+    });
+  };
+
+  const handleAddEducationalExperience = () => {
+    setEducationalExperiencesList((prevState) => {
+      return [...prevState, { id: nanoid(), ...educationalExperience }];
     });
   };
 
@@ -76,21 +76,21 @@ const Informations = () => {
             handleChangeGeneralInformations={handleChangeGeneralInformations}
           />
           <PracticalExperiences
-            handleChangePracticalExperiences={handleChangePracticalExperiences}
+            handleChangePracticalExperience={handleChangePracticalExperience}
             handleAddPracticalExperience={handleAddPracticalExperience}
           />
           <EducationalExperiences
-            handleChangeEducationalExperiences={
-              handleChangeEducationalExperiences
+            handleChangeEducationalExperience={
+              handleChangeEducationalExperience
             }
             handleAddEducationalExperience={handleAddEducationalExperience}
           />
         </EditCvInfo>
         <Preview
           generalInformations={generalInformations}
-          practicalExperiences={practicalExperiences}
+          practicalExperience={practicalExperience}
           practicalExperiencesList={practicalExperiencesList}
-          educationalExperiences={educationalExperiences}
+          educationalExperience={educationalExperience}
           educationalExperiencesList={educationalExperiencesList}
         />
       </Content>

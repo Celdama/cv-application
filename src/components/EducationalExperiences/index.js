@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const EducationalExperiences = ({
-  handleChangeEducationalExperiences,
+  handleChangeEducationalExperience,
   handleAddEducationalExperience,
 }) => {
   const [formData, setFormData] = useState({
@@ -14,8 +14,8 @@ const EducationalExperiences = ({
   });
 
   useEffect(() => {
-    handleChangeEducationalExperiences(formData);
-  }, [handleChangeEducationalExperiences, formData]);
+    handleChangeEducationalExperience(formData);
+  }, [handleChangeEducationalExperience, formData]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,7 +45,7 @@ const EducationalExperiences = ({
   return (
     <div>
       <h3>Educational</h3>
-      <form action='#'>
+      <form onSubmit={handleSubmit}>
         <input
           type='text'
           name='universityName'
@@ -88,7 +88,7 @@ const EducationalExperiences = ({
           placeholder='to'
           onChange={handleChange}
         />
-        <button onClick={handleSubmit}>add</button>
+        <button>add</button>
       </form>
     </div>
   );

@@ -96,7 +96,6 @@ const GeneralInformations = ({ handleChangeGeneralInformations }) => {
           placeholder='description'
           onChange={handleChange}
         />
-        {/* <button>add</button> */}
       </form>
     </div>
   );

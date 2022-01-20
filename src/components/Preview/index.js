@@ -1,95 +1,111 @@
 import React from 'react';
+import PracticalExperiences from '../PracticalExperiences';
 
 const Preview = ({
   generalInformations,
-  practicalExperiences,
+  practicalExperience,
   practicalExperiencesList,
-  educationalExperiences,
+  educationalExperience,
   educationalExperiencesList,
 }) => {
-  console.log(practicalExperiencesList);
-  const practicalExpElements = practicalExperiencesList.map((element) => {
-    return (
-      <div key={element.id}>
-        <div>
-          <p>
-            Position : <span>{element.position}</span>
-          </p>
-          <p>
-            Company : <span>{element.company}</span>
-          </p>
-          <p>
-            City : <span>{element.city}</span>
-          </p>
-          <p>
-            From : <span>{element.from}</span>
-          </p>
-          <p>
-            To : <span>{element.to}</span>
-          </p>
+  const practicalExpElements = practicalExperiencesList.map(
+    ({ id, position, company, city, from, to }) => {
+      return (
+        <div key={id}>
+          <div>
+            <p>
+              Position : <span>{position}</span>
+            </p>
+            <p>
+              Company : <span>{company}</span>
+            </p>
+            <p>
+              City : <span>{city}</span>
+            </p>
+            <p>
+              From : <span>{from}</span>
+            </p>
+            <p>
+              To : <span>{to}</span>
+            </p>
+          </div>
         </div>
-      </div>
-    );
-  });
+      );
+    }
+  );
 
-  const educationalExpElements = educationalExperiencesList.map((element) => {
-    return (
-      <div key={element.id}>
-        <div>
-          <p>
-            University : <span>{element.universityName}</span>
-          </p>
-          <p>
-            City: <span>{element.city}</span>
-          </p>
-          <p>
-            Degree: <span>{element.degree}</span>
-          </p>
-          <p>
-            Subject: <span>{element.subject}</span>
-          </p>
-          <p>
-            From: <span>{element.from}</span>
-          </p>
-          <p>
-            To: <span>{element.to}</span>
-          </p>
+  const educationalExpElements = educationalExperiencesList.map(
+    ({ id, universityName, city, degree, subject, from, to }) => {
+      return (
+        <div key={id}>
+          <div>
+            <p>
+              University : <span>{universityName}</span>
+            </p>
+            <p>
+              City: <span>{city}</span>
+            </p>
+            <p>
+              Degree: <span>{degree}</span>
+            </p>
+            <p>
+              Subject: <span>{subject}</span>
+            </p>
+            <p>
+              From: <span>{from}</span>
+            </p>
+            <p>
+              To: <span>{to}</span>
+            </p>
+          </div>
         </div>
-      </div>
-    );
-  });
+      );
+    }
+  );
+
+  const {
+    firstName,
+    lastName,
+    title,
+    adress,
+    phoneNumber,
+    email,
+    description,
+  } = generalInformations;
+
+  const { position, company, city, from, to } = practicalExperience;
 
   return (
     <div>
       <div>
         <h3>General</h3>
-        <p>{generalInformations.firstName}</p>
-        <p>{generalInformations.lastName}</p>
-        <p>{generalInformations.title}</p>
-        <p>{generalInformations.adress}</p>
-        <p>{generalInformations.phoneNumber}</p>
-        <p>{generalInformations.email}</p>
-        <p>{generalInformations.description}</p>
+        <p>{firstName}</p>
+        <p>{lastName}</p>
+        <p>{title}</p>
+        <p>{adress}</p>
+        <p>{phoneNumber}</p>
+        <p>{email}</p>
+        <p>{description}</p>
       </div>
       <div>
         <h3>Experiences</h3>
         {practicalExperiencesList.length > 0 && practicalExpElements}
-        <p>{practicalExperiences.position}</p>
-        <p>{practicalExperiences.company}</p>
-        <p>{practicalExperiences.city}</p>
-        <p>{practicalExperiences.from}</p>
-        <p>{practicalExperiences.to}</p>
+        <p>{position}</p>
+        <p>{company}</p>
+        <p>{city}</p>
+        <p>{from}</p>
+        <p>{to}</p>
       </div>
       <div>
         <h3>Educational</h3>
         {educationalExperiencesList.length > 0 && educationalExpElements}
 
-        <p>{educationalExperiences.universityName}</p>
-        <p>{educationalExperiences.city}</p>
-        <p>{educationalExperiences.degree}</p>
-        <p>{educationalExperiences.subject}</p>
-        <p>{educationalExperiences.from}</p>
-        <p>{educationalExperiences.to}</p>
+        <p>{educationalExperience.universityName}</p>
+        <p>{educationalExperience.city}</p>
+        <p>{educationalExperience.degree}</p>
+        <p>{educationalExperience.subject}</p>
+        <p>{educationalExperience.from}</p>
+        <p>{educationalExperience.to}</p>
       </div>
     </div>
   );
