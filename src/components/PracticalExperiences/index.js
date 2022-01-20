@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { fakePracticalExp } from '../../fakeData';
 
 const PracticalExperiences = ({
   handleChangePracticalExperience,
   handleAddPracticalExperience,
+  editMode,
 }) => {
   const [formData, setFormData] = useState({
     position: '',
@@ -48,39 +50,39 @@ const PracticalExperiences = ({
         <input
           type='text'
           name='position'
-          value={position}
+          value={!editMode ? fakePracticalExp.position : position}
           placeholder='position'
           onChange={handleChange}
         />
         <input
           type='text'
           name='company'
-          value={company}
+          value={!editMode ? fakePracticalExp.company : company}
           placeholder='company'
           onChange={handleChange}
         />
         <input
           type='text'
           name='city'
-          value={city}
+          value={!editMode ? fakePracticalExp.city : city}
           placeholder='city'
           onChange={handleChange}
         />
         <input
           type='text'
           name='from'
-          value={from}
+          value={!editMode ? fakePracticalExp.from : from}
           placeholder='from'
           onChange={handleChange}
         />
         <input
           type='text'
           name='to'
-          value={to}
+          value={!editMode ? fakePracticalExp.to : to}
           placeholder='to'
           onChange={handleChange}
         />
-        <button>add</button>
+        {editMode && <button>add</button>}
       </form>
     </div>
   );

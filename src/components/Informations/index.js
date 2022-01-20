@@ -5,18 +5,23 @@ import PracticalExperiences from '../PracticalExperiences';
 import Preview from '../Preview';
 import { Wrapper, Content, EditCvInfo } from './information.styles';
 import { nanoid } from 'nanoid';
+import {
+  fakeGenInformations,
+  fakePracticalExp,
+  fakeEducationalExp,
+} from '../../fakeData';
 
 const Informations = () => {
+  const [editMode, setEditMode] = useState(true);
   const [generalInformations, setGeneralInformations] = useState({
-    firstName: 'John',
-    lastName: 'Doe',
-    title: 'Senior web dev',
+    firstName: '',
+    lastName: '',
+    title: '',
     photo: '',
-    adress: 'Example street 10',
-    phoneNumber: '12324566',
-    email: 'john.doe@gmail.com',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tempus imperdiet nisl sed vestibulum. Donec gravida, nulla eget blandit fermentum, mauris nisi rutrum libero, ac pharetra erat est sit amet tellus. Quisque fermentum dolor a interdum fermentum. Maecenas vehicula ac',
+    adress: '',
+    phoneNumber: '',
+    email: '',
+    description: '',
   });
 
   const [practicalExperience, setPracticalExperience] = useState({
@@ -41,8 +46,6 @@ const Informations = () => {
   const [educationalExperiencesList, setEducationalExperiencesList] = useState(
     []
   );
-
-  // POUR CHARGER UN EXEMPLE UTILISER UN BOOLEAN DANS UN STATE EXEMPLE ET REMPLIR CHAQUE STATE AVEC DES FAUSSES INFO
 
   const handleChangeGeneralInformations = (data) => {
     setGeneralInformations(data);
@@ -79,18 +82,26 @@ const Informations = () => {
       prevState.filter((experience) => experience.id !== id)
     );
   };
+
+  const handleFakeInformations = (event) => {
+    setEditMode((prevState) => !prevState);
+  };
+
   return (
     <Wrapper>
       <Content>
         <EditCvInfo>
           <GeneralInformations
+            editMode={editMode}
             handleChangeGeneralInformations={handleChangeGeneralInformations}
           />
           <PracticalExperiences
+            editMode={editMode}
             handleChangePracticalExperience={handleChangePracticalExperience}
             handleAddPracticalExperience={handleAddPracticalExperience}
           />
           <EducationalExperiences
+            editMode={editMode}
             handleChangeEducationalExperience={
               handleChangeEducationalExperience
             }
@@ -98,15 +109,24 @@ const Informations = () => {
           />
         </EditCvInfo>
         <Preview
-          generalInformations={generalInformations}
-          practicalExperience={practicalExperience}
+          generalInformations={
+            !editMode ? fakeGenInformations : generalInformations
+          }
+          practicalExperience={
+            !editMode ? fakePracticalExp : practicalExperience
+          }
           practicalExperiencesList={practicalExperiencesList}
           handleDeletePracticalExperience={handleDeletePracticalExperience}
-          educationalExperience={educationalExperience}
+          educationalExperience={
+            !editMode ? fakeEducationalExp : educationalExperience
+          }
           educationalExperiencesList={educationalExperiencesList}
           handleDeleteEducationalExperience={handleDeleteEducationalExperience}
         />
       </Content>
+      <button onClick={handleFakeInformations}>
+        {!editMode ? 'back edit mode' : 'load example'}
+      </button>
     </Wrapper>
   );
 };

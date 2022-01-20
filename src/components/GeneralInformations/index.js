@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { fakeGenInformations } from '../../fakeData';
 
-const GeneralInformations = ({ handleChangeGeneralInformations }) => {
+const GeneralInformations = ({ handleChangeGeneralInformations, editMode }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -44,55 +45,55 @@ const GeneralInformations = ({ handleChangeGeneralInformations }) => {
         <input
           type='text'
           name='firstName'
-          value={firstName}
+          value={!editMode ? fakeGenInformations.firstName : firstName}
           placeholder='first name'
           onChange={handleChange}
         />
         <input
           type='text'
           name='lastName'
-          value={lastName}
+          value={!editMode ? fakeGenInformations.lastName : lastName}
           placeholder='last name'
           onChange={handleChange}
         />
         <input
           type='text'
           name='title'
-          value={title}
+          value={!editMode ? fakeGenInformations.title : title}
           placeholder='title'
           onChange={handleChange}
         />
         <input
           type='text'
           name='photo'
-          value={photo}
+          value={!editMode ? fakeGenInformations.photo : photo}
           placeholder='photo'
           onChange={handleChange}
         />
         <input
           type='text'
           name='adress'
-          value={adress}
+          value={!editMode ? fakeGenInformations.adress : adress}
           placeholder='adress'
           onChange={handleChange}
         />
         <input
           type='number'
           name='phoneNumber'
-          value={phoneNumber}
+          value={!editMode ? fakeGenInformations.phoneNumber : phoneNumber}
           placeholder='phone number'
           onChange={handleChange}
         />
         <input
           type='email'
           name='email'
-          value={email}
+          value={!editMode ? fakeGenInformations.email : email}
           placeholder='email'
           onChange={handleChange}
         />
         <textarea
           name='description'
-          value={description}
+          value={!editMode ? fakeGenInformations.description : description}
           placeholder='description'
           onChange={handleChange}
         />

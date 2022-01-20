@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { fakeEducationalExp } from '../../fakeData';
 
 const EducationalExperiences = ({
   handleChangeEducationalExperience,
   handleAddEducationalExperience,
+  editMode,
 }) => {
   const [formData, setFormData] = useState({
     universityName: '',
@@ -49,46 +51,46 @@ const EducationalExperiences = ({
         <input
           type='text'
           name='universityName'
-          value={universityName}
+          value={!editMode ? fakeEducationalExp.universityName : universityName}
           placeholder='university Name'
           onChange={handleChange}
         />
         <input
           type='text'
           name='city'
-          value={city}
+          value={!editMode ? fakeEducationalExp.city : city}
           placeholder='city'
           onChange={handleChange}
         />
         <input
           type='text'
           name='degree'
-          value={degree}
+          value={!editMode ? fakeEducationalExp.degree : degree}
           placeholder='degree'
           onChange={handleChange}
         />
         <input
           type='text'
           name='subject'
-          value={subject}
+          value={!editMode ? fakeEducationalExp.subject : subject}
           placeholder='subject'
           onChange={handleChange}
         />
         <input
           type='text'
           name='from'
-          value={from}
+          value={!editMode ? fakeEducationalExp.from : from}
           placeholder='from'
           onChange={handleChange}
         />
         <input
           type='text'
           name='to'
-          value={to}
+          value={!editMode ? fakeEducationalExp.to : to}
           placeholder='to'
           onChange={handleChange}
         />
-        <button>add</button>
+        {editMode && <button>add</button>}
       </form>
     </div>
   );
