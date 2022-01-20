@@ -1,5 +1,7 @@
 import React from 'react';
-import PracticalExperiences from '../PracticalExperiences';
+import PreviewGenInformations from '../PreviewGenInformations';
+import PreviewPracticalExp from '../PreviewPracticalExp';
+import PreviewEducationalExp from '../PreviewEducationalExp';
 
 const Preview = ({
   generalInformations,
@@ -63,49 +65,21 @@ const Preview = ({
     }
   );
 
-  const {
-    firstName,
-    lastName,
-    title,
-    adress,
-    phoneNumber,
-    email,
-    description,
-  } = generalInformations;
-
-  const { position, company, city, from, to } = practicalExperience;
-
   return (
     <div>
       <div>
         <h3>General</h3>
-        <p>{firstName}</p>
-        <p>{lastName}</p>
-        <p>{title}</p>
-        <p>{adress}</p>
-        <p>{phoneNumber}</p>
-        <p>{email}</p>
-        <p>{description}</p>
+        <PreviewGenInformations generalInformations={generalInformations} />
       </div>
       <div>
         <h3>Experiences</h3>
         {practicalExperiencesList.length > 0 && practicalExpElements}
-        <p>{position}</p>
-        <p>{company}</p>
-        <p>{city}</p>
-        <p>{from}</p>
-        <p>{to}</p>
+        <PreviewPracticalExp practicalExperience={practicalExperience} />
       </div>
       <div>
         <h3>Educational</h3>
         {educationalExperiencesList.length > 0 && educationalExpElements}
-
-        <p>{educationalExperience.universityName}</p>
-        <p>{educationalExperience.city}</p>
-        <p>{educationalExperience.degree}</p>
-        <p>{educationalExperience.subject}</p>
-        <p>{educationalExperience.from}</p>
-        <p>{educationalExperience.to}</p>
+        <PreviewEducationalExp educationalExperience={educationalExperience} />
       </div>
     </div>
   );
