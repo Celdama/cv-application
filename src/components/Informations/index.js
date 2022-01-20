@@ -4,6 +4,7 @@ import EducationalExperiences from '../EducationalExperiences';
 import PracticalExperiences from '../PracticalExperiences';
 import Preview from '../Preview';
 import { Wrapper, Content, EditCvInfo } from './information.styles';
+import { nanoid } from 'nanoid';
 
 const Informations = () => {
   const [generalInformations, setGeneralInformations] = useState({
@@ -39,6 +40,8 @@ const Informations = () => {
     []
   );
 
+  const [practicalExperiencesList, setPracticalExperiencesList] = useState([]);
+
   // POUR CHARGER UN EXEMPLE UTILISER UN BOOLEAN DANS UN STATE EXEMPLE ET REMPLIR CHAQUE STATE AVEC DES FAUSSES INFO
 
   const handleChangeGeneralInformations = (data) => {
@@ -54,9 +57,14 @@ const Informations = () => {
   };
 
   const handleAddEducationalExperience = () => {
-    // setEducationalExperiences({});
-    setEducationalExperiencesList((prevEducationalExperiencesList) => {
-      return [...prevEducationalExperiencesList, educationalExperiences];
+    setEducationalExperiencesList((prevState) => {
+      return [...prevState, { id: nanoid(), ...educationalExperiences }];
+    });
+  };
+
+  const handleAddPracticalExperience = () => {
+    setPracticalExperiencesList((prevState) => {
+      return [...prevState, { id: nanoid(), ...practicalExperiences }];
     });
   };
 
@@ -69,6 +77,7 @@ const Informations = () => {
           />
           <PracticalExperiences
             handleChangePracticalExperiences={handleChangePracticalExperiences}
+            handleAddPracticalExperience={handleAddPracticalExperience}
           />
           <EducationalExperiences
             handleChangeEducationalExperiences={
@@ -80,6 +89,7 @@ const Informations = () => {
         <Preview
           generalInformations={generalInformations}
           practicalExperiences={practicalExperiences}
+          practicalExperiencesList={practicalExperiencesList}
           educationalExperiences={educationalExperiences}
           educationalExperiencesList={educationalExperiencesList}
         />

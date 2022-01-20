@@ -3,12 +3,38 @@ import React from 'react';
 const Preview = ({
   generalInformations,
   practicalExperiences,
+  practicalExperiencesList,
   educationalExperiences,
   educationalExperiencesList,
 }) => {
+  console.log(practicalExperiencesList);
+  const practicalExpElements = practicalExperiencesList.map((element) => {
+    return (
+      <div key={element.id}>
+        <div>
+          <p>
+            Position : <span>{element.position}</span>
+          </p>
+          <p>
+            Company : <span>{element.company}</span>
+          </p>
+          <p>
+            City : <span>{element.city}</span>
+          </p>
+          <p>
+            From : <span>{element.from}</span>
+          </p>
+          <p>
+            To : <span>{element.to}</span>
+          </p>
+        </div>
+      </div>
+    );
+  });
+
   const educationalExpElements = educationalExperiencesList.map((element) => {
     return (
-      <div>
+      <div key={element.id}>
         <div>
           <p>
             University : <span>{element.universityName}</span>
@@ -32,6 +58,7 @@ const Preview = ({
       </div>
     );
   });
+
   return (
     <div>
       <div>
@@ -46,6 +73,7 @@ const Preview = ({
       </div>
       <div>
         <h3>Experiences</h3>
+        {practicalExperiencesList.length > 0 && practicalExpElements}
         <p>{practicalExperiences.position}</p>
         <p>{practicalExperiences.company}</p>
         <p>{practicalExperiences.city}</p>
