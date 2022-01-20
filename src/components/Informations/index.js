@@ -3,7 +3,12 @@ import GeneralInformations from '../GeneralInformations';
 import EducationalExperiences from '../EducationalExperiences';
 import PracticalExperiences from '../PracticalExperiences';
 import Preview from '../Preview';
-import { Wrapper, Content, EditCvInfo } from './information.styles';
+import {
+  Wrapper,
+  Content,
+  EditCvInfo,
+  PreviewCvInfo,
+} from './information.styles';
 import { nanoid } from 'nanoid';
 import {
   fakeGenInformations,
@@ -107,26 +112,30 @@ const Informations = () => {
             }
             handleAddEducationalExperience={handleAddEducationalExperience}
           />
+          <button onClick={handleFakeInformations}>
+            {!editMode ? 'back edit mode' : 'load example'}
+          </button>
         </EditCvInfo>
-        <Preview
-          generalInformations={
-            !editMode ? fakeGenInformations : generalInformations
-          }
-          practicalExperience={
-            !editMode ? fakePracticalExp : practicalExperience
-          }
-          practicalExperiencesList={practicalExperiencesList}
-          handleDeletePracticalExperience={handleDeletePracticalExperience}
-          educationalExperience={
-            !editMode ? fakeEducationalExp : educationalExperience
-          }
-          educationalExperiencesList={educationalExperiencesList}
-          handleDeleteEducationalExperience={handleDeleteEducationalExperience}
-        />
+        <PreviewCvInfo>
+          <Preview
+            generalInformations={
+              !editMode ? fakeGenInformations : generalInformations
+            }
+            practicalExperience={
+              !editMode ? fakePracticalExp : practicalExperience
+            }
+            practicalExperiencesList={practicalExperiencesList}
+            handleDeletePracticalExperience={handleDeletePracticalExperience}
+            educationalExperience={
+              !editMode ? fakeEducationalExp : educationalExperience
+            }
+            educationalExperiencesList={educationalExperiencesList}
+            handleDeleteEducationalExperience={
+              handleDeleteEducationalExperience
+            }
+          />
+        </PreviewCvInfo>
       </Content>
-      <button onClick={handleFakeInformations}>
-        {!editMode ? 'back edit mode' : 'load example'}
-      </button>
     </Wrapper>
   );
 };

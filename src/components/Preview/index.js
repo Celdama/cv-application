@@ -2,6 +2,13 @@ import React from 'react';
 import PreviewGenInformations from '../PreviewGenInformations';
 import PreviewPracticalExp from '../PreviewPracticalExp';
 import PreviewEducationalExp from '../PreviewEducationalExp';
+import {
+  Wrapper,
+  Content,
+  HeaderSpace,
+  MainContent,
+  SideContent,
+} from './preview.styles';
 
 const Preview = ({
   generalInformations,
@@ -75,22 +82,85 @@ const Preview = ({
   );
 
   return (
-    <div>
-      <div>
-        <h3>General</h3>
-        <PreviewGenInformations generalInformations={generalInformations} />
-      </div>
-      <div>
-        <h3>Experiences</h3>
-        {practicalExperiencesList.length > 0 && practicalExpElements}
-        <PreviewPracticalExp practicalExperience={practicalExperience} />
-      </div>
-      <div>
-        <h3>Educational</h3>
-        {educationalExperiencesList.length > 0 && educationalExpElements}
-        <PreviewEducationalExp educationalExperience={educationalExperience} />
-      </div>
-    </div>
+    <Wrapper>
+      <HeaderSpace>
+        <h1>
+          {generalInformations.firstName} {generalInformations.lastName}
+        </h1>
+        <p>{generalInformations.title}</p>
+      </HeaderSpace>
+      <Content>
+        <MainContent>
+          <div className='description-container'>
+            <h4>Description</h4>
+            <p>{generalInformations.description}</p>
+          </div>
+          {/* <div>
+          <h3>General</h3>
+          <PreviewGenInformations generalInformations={generalInformations} />
+        </div> */}
+          <div className='practical-container'>
+            <h4>Experiences</h4>
+            {/* {practicalExperiencesList.length > 0 && practicalExpElements} */}
+            <div className='practical'>
+              <div>
+                <span>
+                  {practicalExperience.from} - {practicalExperience.to}
+                </span>
+              </div>
+              <div>
+                <p>{practicalExperience.position}</p>
+                <p>
+                  {practicalExperience.company}, {practicalExperience.city}
+                </p>
+              </div>
+            </div>
+            {/* <PreviewPracticalExp practicalExperience={practicalExperience} /> */}
+          </div>
+          <div className='educational-container'>
+            <h4>Educational</h4>
+            {educationalExperiencesList.length > 0 && educationalExpElements}
+            <div className='educational'>
+              <div>
+                <span>
+                  {educationalExperience.from} - {educationalExperience.to}
+                </span>
+              </div>
+              <div>
+                <p>
+                  {educationalExperience.universityName},{' '}
+                  {educationalExperience.city}
+                </p>
+                <p>Degree: {educationalExperience.degree}</p>
+                <p>Subject: {educationalExperience.subject}</p>
+              </div>
+            </div>
+            {/* <PreviewEducationalExp
+              educationalExperience={educationalExperience}
+            /> */}
+          </div>
+        </MainContent>
+        <SideContent>
+          <span>photo here</span>
+
+          <h4>Personal Details</h4>
+          <div>
+            <div>
+              <h5>Adress</h5>
+              <p>{generalInformations.adress}</p>
+            </div>
+            <div>
+              <h5>Phone Number</h5>
+              <p>{generalInformations.phoneNumber}</p>
+            </div>
+            <div>
+              <h5>Email</h5>
+              <p>{generalInformations.email}</p>
+            </div>
+          </div>
+        </SideContent>
+      </Content>
+    </Wrapper>
   );
 };
 
