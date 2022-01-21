@@ -95,7 +95,6 @@ const Informations = () => {
   return (
     <Wrapper>
       <Content>
-        <div>NAVBAR</div>
         <main>
           <EditCvInfo>
             <GeneralInformations
@@ -146,7 +145,6 @@ const Informations = () => {
             />
           </PreviewCvInfo>
         </main>
-        <div>FOOTER</div>
       </Content>
     </Wrapper>
   );

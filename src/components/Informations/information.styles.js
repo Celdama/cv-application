@@ -11,7 +11,6 @@ export const Content = styled.div`
     padding: 40px 0;
     justify-content: center;
     gap: 20px;
-    outline: 1px solid red;
     flex-wrap: wrap;
   }
 `;
@@ -20,6 +19,8 @@ export const EditCvInfo = styled.div`
   width: 790px;
   min-width: 736px;
   background-color: palevioletred;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 
   .btn-container {
     display: flex;
