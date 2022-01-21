@@ -32,4 +32,26 @@ export const GlobalStyle = createGlobalStyle`
   .mb-8 {
     margin-bottom: 8px;
   }
+
+  form {
+    display: flex;
+    padding: 8px 0;
+    flex-direction: column;
+
+    input {
+      margin: 6px 0;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid transparent;
+    }
+
+    textarea {
+      padding: 0.5rem;
+      height: 82px;
+      border-radius: 5px;
+      border: 1px solid transparent;
+      margin: 6px 0 ;
+    }
+
+  }
 `;
