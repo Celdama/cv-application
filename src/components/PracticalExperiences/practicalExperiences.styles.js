@@ -13,6 +13,7 @@ export const Content = styled.div`
   .experiences-list {
     padding: 8px 0;
     display: flex;
+    flex-direction: column;
 
     .practicals-details {
       width: 100%;

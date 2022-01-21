@@ -18,3 +18,43 @@
     <Preview generalInformation={} educationalExperiences={} PracticalExperiences={} >
   </Information>
 </App>
+
+## Update organization components
+
+<App>
+  <Header />
+  <Informations>
+    <main>
+      <div>
+        <GeneralInformations editMode handleChangeGeneralInformations />
+        <PracticalExperiences
+          editMode
+          handleChangePracticalExperience
+          handleAddPracticalExperience
+          practicalExperiencesList
+          handleDeletePracticalExperience
+        />
+        <EducationalExperiences
+          editMode
+          handleChangeEducationalExperience
+          educationalExperiencesList
+          handleAddEducationalExperience
+          handleDeleteEducationalExperience
+        />
+        <button>Edit Mode toggle</button>
+      <div>
+      <div>
+        <Preview
+          editMode
+          generalInformations
+          practicalExperience
+          practicalExperiencesList
+          educationalExperience
+          educationalExperiencesList
+        />
+      </div>
+    </main>
+  </Informations>
+  <Footer />
+  <GlobalStyle />
+</App>

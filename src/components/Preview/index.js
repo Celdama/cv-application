@@ -1,7 +1,4 @@
 import React from 'react';
-import PreviewGenInformations from '../PreviewGenInformations';
-import PreviewPracticalExp from '../PreviewPracticalExp';
-import PreviewEducationalExp from '../PreviewEducationalExp';
 import {
   Wrapper,
   Content,
@@ -25,13 +22,13 @@ const Preview = ({
     ({ id, position, company, city, from, to }) => {
       return (
         <div key={id} className='practical'>
-          <div className='practical-date'>
+          <div className='practical-date bold'>
             <span>
               {from} - {to}
             </span>
           </div>
           <div className='practical-details'>
-            <p>{position}</p>
+            <p className='bold'>{position}</p>
             <p>
               {company}, {city}
             </p>
@@ -45,16 +42,16 @@ const Preview = ({
     ({ id, universityName, city, degree, subject, from, to }) => {
       return (
         <div key={id} className='educational'>
-          <div className='educational-date'>
+          <div className='educational-date bold'>
             <span>
               {from} - {to}
             </span>
           </div>
           <div className='educational-details'>
-            <p>
+            <p className='bold'>
               {universityName}, {city}
             </p>
-            <p>Degree: {degree}</p>
+            <p className='mb-6'>Degree: {degree}</p>
             <p>Subject: {subject}</p>
           </div>
         </div>
@@ -78,7 +75,9 @@ const Preview = ({
           </div>
           <div className='practical-container'>
             <h4>Experiences</h4>
-            {practicalExperiencesList.length > 0 && practicalExpElements}
+            {practicalExperiencesList.length > 0 &&
+              editMode &&
+              practicalExpElements}
             <div className='practical'>
               <div className='practical-date bold'>
                 <span>
@@ -95,7 +94,9 @@ const Preview = ({
           </div>
           <div className='educational-container'>
             <h4>Educational</h4>
-            {educationalExperiencesList.length > 0 && educationalExpElements}
+            {educationalExperiencesList.length > 0 &&
+              editMode &&
+              educationalExpElements}
             <div className='educational'>
               <div className='educational-date bold'>
                 <span>
