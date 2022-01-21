@@ -31,11 +31,13 @@ export const EditCvInfo = styled.div`
     padding: 20px;
 
     .edit-mode-btn,
-    .generate-pdf-btn {
+    .generate-pdf-btn,
+    .reset-btn {
       width: 100%;
       padding: 12px;
       cursor: pointer;
-      background-color: #e76f51;
+      background-color: #43aa8b;
+
       border-radius: 5px;
       border: 1px solid transparent;
       color: white;
@@ -43,9 +45,13 @@ export const EditCvInfo = styled.div`
       font-size: 0.9rem;
     }
 
-    .generate-pdf-btn {
-      background-color: #43aa8b;
-      margin-top: 12px;
+    .edit-mode-btn {
+      background-color: #f8961e;
+      margin: 12px 0;
+    }
+
+    .reset-btn {
+      background-color: #f94144;
     }
   }
 `;

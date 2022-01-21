@@ -20,6 +20,7 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
 const Informations = () => {
+  const [reset, setReset] = useState(false);
   const [editMode, setEditMode] = useState(true);
   const [generalInformations, setGeneralInformations] = useState({
     firstName: '',
@@ -105,6 +106,11 @@ const Informations = () => {
     });
   };
 
+  const resetGenerator = () => {
+    setReset(true);
+    console.log(generalInformations);
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -113,6 +119,7 @@ const Informations = () => {
             <GeneralInformations
               editMode={editMode}
               handleChangeGeneralInformations={handleChangeGeneralInformations}
+              reset={reset}
             />
             <PracticalExperiences
               editMode={editMode}
@@ -133,14 +140,17 @@ const Informations = () => {
               }
             />
             <div className='btn-container'>
+              <button className='generate-pdf-btn' onClick={saveCvAsPdf}>
+                Generate PDF
+              </button>
               <button
                 className='edit-mode-btn'
                 onClick={handleFakeInformations}
               >
                 {!editMode ? 'Edit Mode' : 'Load Example'}
               </button>
-              <button className='generate-pdf-btn' onClick={saveCvAsPdf}>
-                Generate PDF
+              <button className='reset-btn' onClick={resetGenerator}>
+                Reset
               </button>
             </div>
           </EditCvInfo>
