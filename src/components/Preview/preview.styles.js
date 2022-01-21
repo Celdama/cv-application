@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+  width: 790px;
+`;
 
 export const Content = styled.div`
-  padding: 20px;
   display: flex;
 
   h4 {
@@ -20,9 +21,9 @@ export const HeaderSpace = styled.div`
 `;
 
 export const MainContent = styled.div`
-  background-color: paleturquoise;
-  padding: 20px;
-  width: 77%;
+  background-color: whitesmoke;
+  padding: 40px;
+  width: 75%;
 
   .practical-date,
   .educational-date {
@@ -53,9 +54,14 @@ export const MainContent = styled.div`
 `;
 
 export const SideContent = styled.div`
-  background-color: palevioletred;
-  width: 23%;
-  padding: 20px 16px;
+  background-color: #eee;
+  width: 25%;
+  padding: 40px 16px;
+
+  img {
+    width: 100%;
+    height: 210px;
+  }
 
   p {
     margin-bottom: 6px;

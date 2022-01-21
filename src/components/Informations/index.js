@@ -124,6 +124,7 @@ const Informations = () => {
         </EditCvInfo>
         <PreviewCvInfo>
           <Preview
+            editMode={editMode}
             generalInformations={
               !editMode ? fakeGenInformations : generalInformations
             }

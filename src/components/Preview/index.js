@@ -10,12 +10,16 @@ import {
   SideContent,
 } from './preview.styles';
 
+import placeholderImg from '../../images/placeholder-img.jpeg';
+import fakePlaceholderImg from '../../images/fake-photo.jpg';
+
 const Preview = ({
   generalInformations,
   practicalExperience,
   practicalExperiencesList,
   educationalExperience,
   educationalExperiencesList,
+  editMode,
 }) => {
   const practicalExpElements = practicalExperiencesList.map(
     ({ id, position, company, city, from, to }) => {
@@ -110,7 +114,7 @@ const Preview = ({
           </div>
         </MainContent>
         <SideContent>
-          <span>photo here</span>
+          <img src={editMode ? placeholderImg : fakePlaceholderImg} alt='' />
 
           <h4>Personal Details</h4>
           <div>
