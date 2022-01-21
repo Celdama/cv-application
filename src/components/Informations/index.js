@@ -120,9 +120,14 @@ const Informations = () => {
                 handleDeleteEducationalExperience
               }
             />
-            <button onClick={handleFakeInformations}>
-              {!editMode ? 'back edit mode' : 'load example'}
-            </button>
+            <div className='btn-container'>
+              <button
+                className='edit-mode-btn'
+                onClick={handleFakeInformations}
+              >
+                {!editMode ? 'Edit Mode' : 'Load Example'}
+              </button>
+            </div>
           </EditCvInfo>
           <PreviewCvInfo>
             <Preview

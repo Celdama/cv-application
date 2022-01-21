@@ -46,12 +46,18 @@ const EducationalExperiences = ({
   };
 
   const educationalExpElements = educationalExperiencesList.map(
-    ({ id, universityName }) => {
+    ({ id, universityName, city, degree, subject, from, to }) => {
       return (
-        <div key={id}>
+        <div className='educational-details' key={id}>
           <div>{universityName}</div>
+          <div>{city}</div>
+          <div>{degree}</div>
+          <div>{subject}</div>
+          <div>{from}</div>
+          <div>{to}</div>
+
           <button onClick={() => handleDeleteEducationalExperience(id)}>
-            delete
+            Delete
           </button>
         </div>
       );
@@ -64,6 +70,10 @@ const EducationalExperiences = ({
     <Wrapper>
       <Content>
         <h3>Educational</h3>
+        <div className='educationals-list'>
+          {educationalExperiencesList.length > 0 && educationalExpElements}
+        </div>
+
         <form onSubmit={handleSubmit}>
           <input
             type='text'
@@ -109,9 +119,8 @@ const EducationalExperiences = ({
             placeholder='to'
             onChange={handleChange}
           />
-          {editMode && <button>add</button>}
+          {editMode && <button>Add</button>}
         </form>
-        {educationalExperiencesList.length > 0 && educationalExpElements}
       </Content>
     </Wrapper>
   );

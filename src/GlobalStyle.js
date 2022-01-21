@@ -53,5 +53,17 @@ export const GlobalStyle = createGlobalStyle`
       margin: 6px 0 ;
     }
 
+    button {
+      padding: 12px;
+      cursor: pointer;
+      background-color: #333;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      color: #fff;
+      font-weight: bold;
+      font-size: .9rem;
+      margin-top: 6px;
+    }
+
   }
 `;

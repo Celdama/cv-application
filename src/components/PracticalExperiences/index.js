@@ -47,10 +47,14 @@ const PracticalExperiences = ({
   const practicalExpElements = practicalExperiencesList.map(
     ({ id, position, company, city, from, to }) => {
       return (
-        <div key={id}>
+        <div className='practicals-details' key={id}>
           <div>{position}</div>
+          <div>{company}</div>
+          <div>{city}</div>
+          <div>{from}</div>
+          <div>{to}</div>
           <button onClick={() => handleDeletePracticalExperience(id)}>
-            delete
+            Delete
           </button>
         </div>
       );
@@ -63,6 +67,10 @@ const PracticalExperiences = ({
     <Wrapper>
       <Content>
         <h3>Experience</h3>
+        <div className='experiences-list'>
+          {practicalExperiencesList.length > 0 && practicalExpElements}
+        </div>
+
         <form onSubmit={handleSubmit}>
           <input
             type='text'
@@ -99,10 +107,8 @@ const PracticalExperiences = ({
             placeholder='to'
             onChange={handleChange}
           />
-          {editMode && <button>add</button>}
+          {editMode && <button>Add</button>}
         </form>
-
-        {practicalExperiencesList.length > 0 && practicalExpElements}
       </Content>
     </Wrapper>
   );
