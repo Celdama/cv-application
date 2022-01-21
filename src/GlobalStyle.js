@@ -14,6 +14,22 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .App {
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .mb-4 {
+    margin-bottom: 4px;
+  }
+
+  .mb-6 {
+    margin-bottom: 6px;
+  }
+
+  .mb-8 {
+    margin-bottom: 8px;
   }
 `;

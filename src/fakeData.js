@@ -1,7 +1,7 @@
 export const fakeGenInformations = {
   firstName: 'John',
   lastName: 'Doe',
-  title: 'Senior web dev',
+  title: 'Senior Web Developer',
   photo: '',
   adress: 'Example street 10',
   phoneNumber: '12324566',

@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  width: 790px;
+  outline: 1px solid blue;
+  color: #333;
+  font-size: 0.9rem;
 `;
 
 export const Content = styled.div`
   display: flex;
+  height: 1110px;
 
   h4 {
     margin: 12px 0;
+    color: #143e72;
+    padding: 2px 0;
+    font-size: 1.1rem;
+    font-weight: normal;
+    border-bottom: 1px solid rgb(204, 204, 204);
   }
 `;
 
@@ -16,24 +24,38 @@ export const HeaderSpace = styled.div`
   color: #fff;
   height: 110px;
   width: 100%;
-  padding: 20px;
+  padding: 20px 40px;
   background-color: #143e72;
+
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
 `;
 
 export const MainContent = styled.div`
   background-color: whitesmoke;
-  padding: 40px;
+  padding: 20px 40px;
   width: 75%;
+
+  .description {
+    font-style: italic;
+    color: #333;
+    line-height: 1.6;
+  }
 
   .practical-date,
   .educational-date {
-    width: 17%;
+    width: 20%;
     padding: 6px;
   }
 
   .practical-details,
   .educational-details {
-    width: 83%;
+    width: 80%;
     padding: 6px;
   }
 
@@ -61,9 +83,5 @@ export const SideContent = styled.div`
   img {
     width: 100%;
     height: 210px;
-  }
-
-  p {
-    margin-bottom: 6px;
   }
 `;

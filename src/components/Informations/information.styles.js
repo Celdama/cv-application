@@ -2,30 +2,27 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.main`
   padding: 20px;
+  height: 100%;
 `;
 
 export const Content = styled.div`
-  outline: 1px solid blue;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  /* justify-content: space-around; */
-
-  @media screen and (max-width: 1200px) {
-    flex-direction: column;
-    align-items: center;
+  main {
+    display: flex;
+    padding: 40px 0;
+    justify-content: center;
+    gap: 20px;
+    outline: 1px solid red;
+    flex-wrap: wrap;
   }
 `;
 
 export const EditCvInfo = styled.div`
-  outline: 1px solid red;
-  background-color: palegoldenrod;
-  max-width: 790px;
+  width: 790px;
+  min-width: 736px;
+  background-color: palevioletred;
 `;
 
 export const PreviewCvInfo = styled.div`
-  background-color: palegreen;
-  max-width: 790px;
-  min-width: 780px;
-  flex: 1 1 auto;
+  width: 790px;
+  min-width: 736px;
 `;

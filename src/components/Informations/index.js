@@ -95,49 +95,53 @@ const Informations = () => {
   return (
     <Wrapper>
       <Content>
-        <EditCvInfo>
-          <GeneralInformations
-            editMode={editMode}
-            handleChangeGeneralInformations={handleChangeGeneralInformations}
-          />
-          <PracticalExperiences
-            editMode={editMode}
-            handleChangePracticalExperience={handleChangePracticalExperience}
-            handleAddPracticalExperience={handleAddPracticalExperience}
-            practicalExperiencesList={practicalExperiencesList}
-            handleDeletePracticalExperience={handleDeletePracticalExperience}
-          />
-          <EducationalExperiences
-            editMode={editMode}
-            handleChangeEducationalExperience={
-              handleChangeEducationalExperience
-            }
-            educationalExperiencesList={educationalExperiencesList}
-            handleAddEducationalExperience={handleAddEducationalExperience}
-            handleDeleteEducationalExperience={
-              handleDeleteEducationalExperience
-            }
-          />
-          <button onClick={handleFakeInformations}>
-            {!editMode ? 'back edit mode' : 'load example'}
-          </button>
-        </EditCvInfo>
-        <PreviewCvInfo>
-          <Preview
-            editMode={editMode}
-            generalInformations={
-              !editMode ? fakeGenInformations : generalInformations
-            }
-            practicalExperience={
-              !editMode ? fakePracticalExp : practicalExperience
-            }
-            practicalExperiencesList={practicalExperiencesList}
-            educationalExperience={
-              !editMode ? fakeEducationalExp : educationalExperience
-            }
-            educationalExperiencesList={educationalExperiencesList}
-          />
-        </PreviewCvInfo>
+        <div>NAVBAR</div>
+        <main>
+          <EditCvInfo>
+            <GeneralInformations
+              editMode={editMode}
+              handleChangeGeneralInformations={handleChangeGeneralInformations}
+            />
+            <PracticalExperiences
+              editMode={editMode}
+              handleChangePracticalExperience={handleChangePracticalExperience}
+              handleAddPracticalExperience={handleAddPracticalExperience}
+              practicalExperiencesList={practicalExperiencesList}
+              handleDeletePracticalExperience={handleDeletePracticalExperience}
+            />
+            <EducationalExperiences
+              editMode={editMode}
+              handleChangeEducationalExperience={
+                handleChangeEducationalExperience
+              }
+              educationalExperiencesList={educationalExperiencesList}
+              handleAddEducationalExperience={handleAddEducationalExperience}
+              handleDeleteEducationalExperience={
+                handleDeleteEducationalExperience
+              }
+            />
+            <button onClick={handleFakeInformations}>
+              {!editMode ? 'back edit mode' : 'load example'}
+            </button>
+          </EditCvInfo>
+          <PreviewCvInfo>
+            <Preview
+              editMode={editMode}
+              generalInformations={
+                !editMode ? fakeGenInformations : generalInformations
+              }
+              practicalExperience={
+                !editMode ? fakePracticalExp : practicalExperience
+              }
+              practicalExperiencesList={practicalExperiencesList}
+              educationalExperience={
+                !editMode ? fakeEducationalExp : educationalExperience
+              }
+              educationalExperiencesList={educationalExperiencesList}
+            />
+          </PreviewCvInfo>
+        </main>
+        <div>FOOTER</div>
       </Content>
     </Wrapper>
   );

@@ -11,7 +11,7 @@ import {
 } from './preview.styles';
 
 import placeholderImg from '../../images/placeholder-img.jpeg';
-import fakePlaceholderImg from '../../images/fake-photo.jpg';
+import fakeImg from '../../images/fake-photo.jpg';
 
 const Preview = ({
   generalInformations,
@@ -74,19 +74,19 @@ const Preview = ({
         <MainContent>
           <div className='description-container'>
             <h4>Description</h4>
-            <p>{generalInformations.description}</p>
+            <p className='description'>{generalInformations.description}</p>
           </div>
           <div className='practical-container'>
             <h4>Experiences</h4>
             {practicalExperiencesList.length > 0 && practicalExpElements}
             <div className='practical'>
-              <div className='practical-date'>
+              <div className='practical-date bold'>
                 <span>
                   {practicalExperience.from} - {practicalExperience.to}
                 </span>
               </div>
               <div className='practical-details'>
-                <p>{practicalExperience.position}</p>
+                <p className='bold'>{practicalExperience.position}</p>
                 <p>
                   {practicalExperience.company}, {practicalExperience.city}
                 </p>
@@ -97,37 +97,37 @@ const Preview = ({
             <h4>Educational</h4>
             {educationalExperiencesList.length > 0 && educationalExpElements}
             <div className='educational'>
-              <div className='educational-date'>
+              <div className='educational-date bold'>
                 <span>
                   {educationalExperience.from} - {educationalExperience.to}
                 </span>
               </div>
               <div className='educational-details'>
-                <p>
+                <p className='bold'>
                   {educationalExperience.universityName},{' '}
                   {educationalExperience.city}
                 </p>
-                <p>Degree: {educationalExperience.degree}</p>
+                <p className='mb-6'>Degree: {educationalExperience.degree}</p>
                 <p>Subject: {educationalExperience.subject}</p>
               </div>
             </div>
           </div>
         </MainContent>
         <SideContent>
-          <img src={editMode ? placeholderImg : fakePlaceholderImg} alt='' />
+          <img src={editMode ? placeholderImg : fakeImg} alt='' />
 
           <h4>Personal Details</h4>
           <div>
-            <div>
-              <h5>Adress</h5>
+            <div className='mb-8 '>
+              <p className='bold mb-4'>Adress</p>
               <p>{generalInformations.adress}</p>
             </div>
-            <div>
-              <h5>Phone Number</h5>
+            <div className='mb-8'>
+              <p className='bold mb-4'>Phone Number</p>
               <p>{generalInformations.phoneNumber}</p>
             </div>
-            <div>
-              <h5>Email</h5>
+            <div className='mb-8'>
+              <p className='bold mb-4'>Email</p>
               <p>{generalInformations.email}</p>
             </div>
           </div>
