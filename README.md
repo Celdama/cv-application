@@ -58,3 +58,9 @@
   <Footer />
   <GlobalStyle />
 </App>
+
+# next features
+
+- [] add button to load cv in pdf
+- [] allow user to choose a main color
+- [] add reset button
