@@ -95,9 +95,8 @@ const Informations = () => {
     setEditMode((prevState) => !prevState);
   };
 
-  const saveAsPdf = () => {
+  const saveCvAsPdf = () => {
     html2canvas(document.getElementById('cv')).then((canvas) => {
-      console.log(canvas);
       const cvData = canvas.toDataURL('cv/png');
 
       const pdf = new jsPDF();
@@ -140,7 +139,9 @@ const Informations = () => {
               >
                 {!editMode ? 'Edit Mode' : 'Load Example'}
               </button>
-              <button onClick={saveAsPdf}>save pdf</button>
+              <button className='generate-pdf-btn' onClick={saveCvAsPdf}>
+                Generate PDF
+              </button>
             </div>
           </EditCvInfo>
           <PreviewCvInfo>

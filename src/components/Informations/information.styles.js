@@ -24,12 +24,14 @@ export const EditCvInfo = styled.div`
 
   .btn-container {
     display: flex;
+    flex-direction: column;
     background-color: #eee;
     justify-content: center;
     width: 100%;
     padding: 20px;
 
-    .edit-mode-btn {
+    .edit-mode-btn,
+    .generate-pdf-btn {
       width: 100%;
       padding: 12px;
       cursor: pointer;
@@ -39,6 +41,11 @@ export const EditCvInfo = styled.div`
       color: white;
       font-weight: bold;
       font-size: 0.9rem;
+    }
+
+    .generate-pdf-btn {
+      background-color: #43aa8b;
+      margin-top: 12px;
     }
   }
 `;
