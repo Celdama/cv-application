@@ -16,6 +16,9 @@ import {
   fakeEducationalExp,
 } from '../../fakeData';
 
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
+
 const Informations = () => {
   const [editMode, setEditMode] = useState(true);
   const [generalInformations, setGeneralInformations] = useState({
@@ -92,6 +95,17 @@ const Informations = () => {
     setEditMode((prevState) => !prevState);
   };
 
+  const saveAsPdf = () => {
+    html2canvas(document.getElementById('cv')).then((canvas) => {
+      console.log(canvas);
+      const cvData = canvas.toDataURL('cv/png');
+
+      const pdf = new jsPDF();
+      pdf.addImage(cvData, 'PNG', 0, 0);
+      pdf.save('cv.pdf');
+    });
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -126,6 +140,7 @@ const Informations = () => {
               >
                 {!editMode ? 'Edit Mode' : 'Load Example'}
               </button>
+              <button onClick={saveAsPdf}>save pdf</button>
             </div>
           </EditCvInfo>
           <PreviewCvInfo>

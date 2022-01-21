@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   Wrapper,
   Content,
@@ -6,7 +7,6 @@ import {
   MainContent,
   SideContent,
 } from './preview.styles';
-
 import placeholderImg from '../../images/placeholder-img.jpeg';
 import fakeImg from '../../images/fake-photo.jpg';
 
@@ -60,7 +60,7 @@ const Preview = ({
   );
 
   return (
-    <Wrapper>
+    <Wrapper id='cv'>
       <HeaderSpace>
         <h1>
           {generalInformations.firstName} {generalInformations.lastName}
