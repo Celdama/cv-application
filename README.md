@@ -62,5 +62,5 @@
 # next features
 
 - [x] add button to load cv in pdf
-- [] allow user to choose a main color
+- [x] allow user to choose a main color
 - [] add reset button

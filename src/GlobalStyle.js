@@ -15,6 +15,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .App {
     /* outline: 1px solid red; */
+
   }
 
   .bold {

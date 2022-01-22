@@ -5,6 +5,7 @@ export const Wrapper = styled.div`
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   font-size: 0.9rem;
+  word-wrap: break-word;
 `;
 
 export const Content = styled.div`
@@ -81,6 +82,7 @@ export const SideContent = styled.div`
   background-color: #eee;
   width: 25%;
   padding: 40px 16px;
+  word-wrap: break-word;
 
   img {
     width: 100%;

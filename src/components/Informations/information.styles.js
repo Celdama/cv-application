@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.main`
   padding: 20px;
   height: 100%;
+  background-color: #e9ecef;
 `;
 
 export const Content = styled.div`

@@ -5,7 +5,10 @@ const Footer = () => {
   return (
     <Wrapper>
       <Content>
-        <p>@ Celdama dev 2021</p>
+        <p>
+          Copyright &copy;<span>{new Date().getFullYear()}</span> Celdama{' '}
+          <i class='fab fa-github'></i>
+        </p>
       </Content>
     </Wrapper>
   );
