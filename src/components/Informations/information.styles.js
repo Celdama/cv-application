@@ -8,10 +8,25 @@ export const Wrapper = styled.main`
 export const Content = styled.div`
   main {
     display: flex;
-    padding: 40px 0;
+    padding: 90px 0;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
+  }
+
+  .popover {
+    position: absolute;
+    /* bottom: 30%;
+    left: 60%; */
+    z-index: 2;
+  }
+
+  .cover {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
   }
 `;
 

@@ -17,6 +17,7 @@ const Preview = ({
   educationalExperience,
   educationalExperiencesList,
   editMode,
+  mainCvColor,
 }) => {
   const practicalExpElements = practicalExperiencesList.map(
     ({ id, position, company, city, from, to }) => {
@@ -61,13 +62,13 @@ const Preview = ({
 
   return (
     <Wrapper id='cv'>
-      <HeaderSpace>
+      <HeaderSpace bgColor={mainCvColor}>
         <h1>
           {generalInformations.firstName} {generalInformations.lastName}
         </h1>
         <p>{generalInformations.title}</p>
       </HeaderSpace>
-      <Content>
+      <Content bgColor={mainCvColor}>
         <MainContent>
           <div className='description-container'>
             <h4>Description</h4>

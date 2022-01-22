@@ -2,11 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fakeGenInformations } from '../../fakeData';
 import { Wrapper, Content } from './generalInformations.styles';
 
-const GeneralInformations = ({
-  handleChangeGeneralInformations,
-  editMode,
-  reset,
-}) => {
+const GeneralInformations = ({ handleChangeGeneralInformations, editMode }) => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',

@@ -13,7 +13,7 @@ export const Content = styled.div`
 
   h4 {
     margin: 12px 0;
-    color: #143e72;
+    color: ${({ bgColor }) => (bgColor ? `${bgColor}` : 'red')};
     padding: 2px 0;
     font-size: 1.1rem;
     font-weight: normal;
@@ -26,7 +26,8 @@ export const HeaderSpace = styled.div`
   height: 110px;
   width: 100%;
   padding: 20px 40px;
-  background-color: #143e72;
+  background-color: ${({ bgColor }) => (bgColor ? `${bgColor}` : 'red')};
+  /* background-color: #143e72; */
 
   h1 {
     font-size: 2.4rem;

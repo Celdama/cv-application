@@ -15,46 +15,21 @@ import {
   fakePracticalExp,
   fakeEducationalExp,
 } from '../../fakeData';
-
+import { TwitterPicker } from 'react-color';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
 const Informations = () => {
-  const [reset, setReset] = useState(false);
   const [editMode, setEditMode] = useState(true);
-  const [generalInformations, setGeneralInformations] = useState({
-    firstName: '',
-    lastName: '',
-    title: '',
-    photo: '',
-    adress: '',
-    phoneNumber: '',
-    email: '',
-    description: '',
-  });
-
-  const [practicalExperience, setPracticalExperience] = useState({
-    position: '',
-    company: '',
-    city: '',
-    from: '',
-    to: '',
-  });
-
-  const [educationalExperience, setEducationalExperience] = useState({
-    universityName: '',
-    city: '',
-    degree: '',
-    subject: '',
-    from: '',
-    to: '',
-  });
-
+  const [generalInformations, setGeneralInformations] = useState({});
+  const [practicalExperience, setPracticalExperience] = useState({});
+  const [educationalExperience, setEducationalExperience] = useState({});
   const [practicalExperiencesList, setPracticalExperiencesList] = useState([]);
-
   const [educationalExperiencesList, setEducationalExperiencesList] = useState(
     []
   );
+  const [mainCvColor, setMainCvColor] = useState('#143e72');
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
 
   const handleChangeGeneralInformations = (data) => {
     setGeneralInformations(data);
@@ -106,9 +81,16 @@ const Informations = () => {
     });
   };
 
-  const resetGenerator = () => {
-    setReset(true);
-    console.log(generalInformations);
+  const handleChangeCompleteColor = (color) => {
+    setMainCvColor(color.hex);
+  };
+
+  const handleDisplayColorPicker = () => {
+    setDisplayColorPicker((prevState) => !prevState.displayColorPicker);
+  };
+
+  const handleClose = () => {
+    setDisplayColorPicker(false);
   };
 
   return (
@@ -119,7 +101,6 @@ const Informations = () => {
             <GeneralInformations
               editMode={editMode}
               handleChangeGeneralInformations={handleChangeGeneralInformations}
-              reset={reset}
             />
             <PracticalExperiences
               editMode={editMode}
@@ -149,9 +130,23 @@ const Informations = () => {
               >
                 {!editMode ? 'Edit Mode' : 'Load Example'}
               </button>
-              <button className='reset-btn' onClick={resetGenerator}>
-                Reset
-              </button>
+              <div>
+                <button
+                  className='reset-btn'
+                  onClick={handleDisplayColorPicker}
+                >
+                  Pick Color
+                </button>
+                {displayColorPicker && editMode ? (
+                  <div className='popover'>
+                    <div className='cover' onClick={handleClose} />
+                    <TwitterPicker
+                      color={mainCvColor}
+                      onChangeComplete={handleChangeCompleteColor}
+                    />{' '}
+                  </div>
+                ) : null}
+              </div>
             </div>
           </EditCvInfo>
           <PreviewCvInfo>
@@ -168,6 +163,7 @@ const Informations = () => {
                 !editMode ? fakeEducationalExp : educationalExperience
               }
               educationalExperiencesList={educationalExperiencesList}
+              mainCvColor={mainCvColor}
             />
           </PreviewCvInfo>
         </main>
