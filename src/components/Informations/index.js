@@ -28,7 +28,7 @@ const Informations = () => {
   const [educationalExperiencesList, setEducationalExperiencesList] = useState(
     []
   );
-  const [mainCvColor, setMainCvColor] = useState('#143e72');
+  const [mainCvColor, setMainCvColor] = useState('');
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
 
   const handleChangeGeneralInformations = (data) => {
