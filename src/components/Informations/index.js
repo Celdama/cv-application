@@ -132,7 +132,7 @@ const Informations = () => {
               </button>
               <div>
                 <button
-                  className='reset-btn'
+                  className='pick-color-btn'
                   onClick={handleDisplayColorPicker}
                 >
                   Pick Color

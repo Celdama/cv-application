@@ -1,7 +1,17 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  :root {}
+  :root {
+    --black: #333;
+    --white: #fff;
+    --medWhite: #e9eced;
+    --green: #43aa8b;
+    --red: #f94144;
+    --orange: #f8961e;
+    --fontBig: 1.5rem;
+    --fontMed: 1.2rem;
+    --fontSmall: 0.9rem;
+  }
 
   * {
     box-sizing: border-box;
@@ -11,11 +21,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: sans-serif;
-  }
-
-  .App {
-    /* outline: 1px solid red; */
-
   }
 
   .bold {
@@ -57,10 +62,10 @@ export const GlobalStyle = createGlobalStyle`
     button {
       padding: 12px;
       cursor: pointer;
-      background-color: #333;
+      background-color: var(--black);
       border: 1px solid transparent;
       border-radius: 5px;
-      color: #fff;
+      color: var(--white);
       font-weight: bold;
       font-size: .9rem;
       margin-top: 6px;
