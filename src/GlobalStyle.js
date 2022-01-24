@@ -5,9 +5,14 @@ export const GlobalStyle = createGlobalStyle`
     --black: #333;
     --white: #fff;
     --medWhite: #e9eced;
+    --lightWhite: #f5f5f5;
     --green: #43aa8b;
     --red: #f94144;
+    --defaultBlue: #143e72;
+    --lightGray: #ccc;
+    --medGray: #eee;
     --orange: #f8961e;
+    --fontExtraBig: 2.4rem;
     --fontBig: 1.5rem;
     --fontMed: 1.2rem;
     --fontSmall: 0.9rem;

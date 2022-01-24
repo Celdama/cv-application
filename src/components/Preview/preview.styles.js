@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  color: #333;
+  color: var(--black);
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-  font-size: 0.9rem;
+  font-size: var(--fontSmall);
   word-wrap: break-word;
 `;
 
@@ -14,39 +14,39 @@ export const Content = styled.div`
 
   h4 {
     margin: 12px 0;
-    color: ${({ bgColor }) => (bgColor ? `${bgColor}` : 'red')};
+    color: ${({ bgColor }) => (bgColor ? `${bgColor}` : 'var(--defaultBlue)')};
     padding: 2px 0;
-    font-size: 1.1rem;
+    font-size: var(--fontMed);
     font-weight: normal;
-    border-bottom: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid var(--lightGray);
   }
 `;
 
 export const HeaderSpace = styled.div`
-  color: #fff;
+  color: var(--white);
   height: 110px;
   width: 100%;
   padding: 20px 40px;
-  background-color: ${({ bgColor }) => (bgColor ? `${bgColor}` : 'red')};
-  /* background-color: #143e72; */
+  background-color: ${({ bgColor }) =>
+    bgColor ? `${bgColor}` : 'var(--defaultBlue)'};
 
   h1 {
-    font-size: 2.4rem;
+    font-size: var(--fontExtraBig);
   }
 
   p {
-    font-size: 1.4rem;
+    font-size: var(--fontBig);
   }
 `;
 
 export const MainContent = styled.div`
-  background-color: whitesmoke;
+  background-color: var(--lightWhite);
   padding: 20px 40px;
   width: 75%;
 
   .description {
     font-style: italic;
-    color: #333;
+    color: var(--black);
     line-height: 1.6;
   }
 
@@ -79,7 +79,7 @@ export const MainContent = styled.div`
 `;
 
 export const SideContent = styled.div`
-  background-color: #eee;
+  background-color: var(--medGray);
   width: 25%;
   padding: 40px 16px;
   word-wrap: break-word;
