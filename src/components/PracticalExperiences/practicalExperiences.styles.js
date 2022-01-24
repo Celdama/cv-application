@@ -2,13 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   padding: 20px;
-  background-color: #eee;
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  color: #333;
+  color: var(--black);
 
   .experiences-list {
     padding: 8px 0;
@@ -20,21 +19,21 @@ export const Content = styled.div`
       div {
         margin: 6px 0;
         padding: 0.5rem;
-        background-color: #fff;
+        background-color: var(--white);
         border-radius: 5px;
         border: 1px solid transparent;
       }
 
       button {
-        background-color: #333;
-        color: white;
+        background-color: var(--black);
+        color: var(--white);
         width: 100%;
         padding: 12px;
         cursor: pointer;
         border: 1px solid transparent;
         border-radius: 5px;
         font-weight: bold;
-        font-size: 0.9rem;
+        font-size: var(--fontSmall);
         margin-top: 6px;
       }
     }
